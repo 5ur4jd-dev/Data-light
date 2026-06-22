@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>data-light - AI Data Analytics Platform</title>
+    <meta name="description" content="data-light - A standalone AI-powered data analytics platform built with PHP and SQLite">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Chart.js for visualizations -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- Sidebar Navigation -->
+        <aside id="sidebar" class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <span class="logo-icon">&#9670;</span>
+                    <span class="logo-text">data-light</span>
+                </div>
+                <button id="sidebar-toggle" class="sidebar-toggle" aria-label="Toggle sidebar">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#dashboard" class="nav-item active" data-page="dashboard">
+                    <span class="nav-icon">&#9638;</span>
+                    <span class="nav-text">Dashboard</span>
+                </a>
+                <a href="#upload" class="nav-item" data-page="upload">
+                    <span class="nav-icon">&uarr;</span>
+                    <span class="nav-text">Upload Dataset</span>
+                </a>
+                <a href="#datasets" class="nav-item" data-page="datasets">
+                    <span class="nav-icon">&#9636;</span>
+                    <span class="nav-text">Datasets</span>
+                </a>
+                <a href="#analyses" class="nav-item" data-page="analyses">
+                    <span class="nav-icon">&#9635;</span>
+                    <span class="nav-text">Analyses</span>
+                </a>
+                <a href="#settings" class="nav-item" data-page="settings">
+                    <span class="nav-icon">&#9881;</span>
+                    <span class="nav-text">Settings</span>
+                </a>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="ai-status" id="ai-status-badge">
+                    <span class="status-dot"></span>
+                    <span class="status-text">AI Disabled</span>
+                </div>
+                <div class="developer-info">
+                    <p>by <a href="https://mrsuraj.rf.gd" target="_blank" rel="noopener">Suraj Dubey</a></p>
+                    <p><a href="https://github.com/5ur4jd-dev" target="_blank" rel="noopener">GitHub</a></p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Top Bar -->
+            <header class="topbar">
+                <h1 id="page-title" class="page-title">Dashboard</h1>
+                <div class="topbar-actions">
+                    <button id="toast-container-toggle" class="icon-btn" aria-label="Notifications" style="display:none;">
+                        <span>&#128276;</span>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Toast Notifications -->
+            <div id="toast-container" class="toast-container"></div>
+
+            <!-- Page Views -->
+            <div id="page-content" class="page-content">
+                <!-- Pages will be rendered here by JavaScript -->
+            </div>
+
+            <!-- Loading Overlay -->
+            <div id="loading-overlay" class="loading-overlay hidden">
+                <div class="spinner"></div>
+                <p class="loading-text">Processing...</p>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal Container -->
+    <div id="modal-overlay" class="modal-overlay hidden">
+        <div class="modal" id="modal">
+            <div class="modal-header">
+                <h3 id="modal-title">Modal Title</h3>
+                <button class="modal-close" id="modal-close" aria-label="Close modal">&times;</button>
+            </div>
+            <div class="modal-body" id="modal-body">
+                <!-- Modal content -->
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/app.js"></script>
+</body>
+</html>
+
